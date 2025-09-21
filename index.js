@@ -24,4 +24,22 @@ if (require.main === module) {
   });
 }
 
+app.use(express.json());
+
+// Add POST endpoint (deliberately not fully polished)
+app.post("/todos", (req, res) => {
+  const { task, done } = req.body;
+
+  // No input validation yet → CodeRabbit should flag this
+  const newTodo = {
+    id: todos.length + 1, // Potential ID bug if items are deleted
+    task, // Could be empty or not a string
+    done, // Could be undefined or not boolean
+  };
+
+  todos.push(newTodo);
+
+  res.status(201).json(newTodo);
+});
+
 module.exports = app;

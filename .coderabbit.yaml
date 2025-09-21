@@ -1,0 +1,12 @@
+version: 1
+rules:
+  style:
+    prefer_const: true
+    semicolons: always
+    quotes: double
+  security:
+    no_eval: true
+    no_console_log: true
+  best_practices:
+    enforce_async_await: true
+    require_error_handling: true
