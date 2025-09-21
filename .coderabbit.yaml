@@ -1,0 +1,6 @@
+version: 1
+rules:
+  style:
+    prefer_const: true
+    semicolons: always
+    quotes: double
